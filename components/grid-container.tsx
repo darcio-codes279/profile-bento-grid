@@ -7,15 +7,15 @@ import {
     CardHeader,
     CardTitle,
 } from "./ui/card";
+import { Linkedin, Instagram, } from "lucide-react";
+import { Mail, StickyNote, Download } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import { Button } from "./ui/button";
+import Image from "next/image";
+import Profile from "./layout/profile";
+import TechStack from "./layout/tech-stack";
+import SwiperContainer from "./swiper";
 
-interface GridItem {
-    title: string;
-    colSpan: number;
-    rowSpan: number;
-    colStart: number;
-    rowStart: number;
-}
 
 // const GridItems: GridItem[] = [
 //     { title: "Tech Stack", colSpan: 2, rowSpan: 2, colStart: 1, rowStart: 1 },
@@ -36,34 +36,47 @@ interface GridItem {
 const GridContainer: React.FC = () => {
     return (
         <div className="grid grid-cols-6 grid-rows-6 gap-4 w-full">
-            <Card className="col-span-3 row-span-2">1</Card>
+            <Card className="col-span-3 row-span-2">
+                {/* <TechStack /> */}
+                <SwiperContainer />
+            </Card>
             <Card className="row-span-2 col-start-4">2</Card>
-            <Card className="col-start-5">3</Card>
-            <Card className="col-start-6">4</Card>
+            <Card className="col-start-5">
+                <Linkedin></Linkedin>
+            </Card>
+            <Card className="col-start-6"><Instagram></Instagram></Card>
             <Card className="col-start-5 row-start-2">5</Card>
             <Card className="col-start-6 row-start-2">6</Card>
-            <Card className="row-span-2 row-start-3">7</Card>
-            <Card className="col-span-3 row-span-2 row-start-3">
-                {/* {Create Profile} */}
-                <CardContent className="flex flex-row space-x-4 p-4">
-                    <Avatar>
-                        <AvatarImage src="/images/third.png" />
-                        <AvatarFallback>DM</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>Darcio Massala</CardTitle>
-                    <CardDescription>Software Engineer</CardDescription>
-                    {/* {Tags: Software Engineer, Speaker, Community Builder} */}
-                    {/* {Description} */}
-                    {/* {email me button} */}
-                    {/* {Reusme button (download)} */}
-
-                </CardContent>
+            <Card className="row-span-2 row-start-3">
+                <Image
+                    src="/images/image.png"
+                    alt="Description of the image"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover rounded-lg"
+                ></Image>
             </Card>
-            <Card className="col-span-2 row-span-2 col-start-5 row-start-3">9</Card>
+            <Card className="col-span-3 row-span-2 row-start-3">
+                <Profile></Profile>
+            </Card>
+            <Card className="col-span-2 row-span-2 col-start-5 row-start-3">
+                <Image
+                    src="/images/oliver-pecker-HONJP8DyiSM-unsplash.png"
+                    alt="Description of the image"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover rounded-lg"
+                ></Image>
+            </Card>
             <Card className="col-span-3 row-span-2 row-start-5">10</Card>
             <Card className="col-span-3 row-span-2 col-start-4 row-start-5">11</Card>
         </div>
     );
 };
-
 export default GridContainer;
+
+// {JavaScript} Typescript, HTML, CSS, Node JS, AWS
+// Python, Pandas, GitHub, Dynamo DB, Mongo DB, Redux, Next JS, React JS, Express JS
+// Powershell, Linux, Yaml, 
+// Figma
+// Jira, Bitbucket, 
