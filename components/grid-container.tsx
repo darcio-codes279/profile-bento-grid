@@ -15,7 +15,14 @@ import Image from "next/image";
 import Profile from "./layout/profile";
 import TechStack from "./layout/tech-stack";
 import SwiperContainer from "./swiper";
+import { ModeToggle } from "./ui/theme-toggle";
 
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { BsSubstack } from "react-icons/bs";
+import { HiOutlineAtSymbol } from "react-icons/hi";
+import { SiBuymeacoffee } from "react-icons/si";
+import SocialsIcons from "./layout/socialsIcons";
+import BuyMeCoffee from "./layout/buyMeCoffee";
 
 // const GridItems: GridItem[] = [
 //     { title: "Tech Stack", colSpan: 2, rowSpan: 2, colStart: 1, rowStart: 1 },
@@ -37,16 +44,31 @@ const GridContainer: React.FC = () => {
     return (
         <div className="grid grid-cols-6 grid-rows-6 gap-4 w-full">
             <Card className="col-span-3 row-span-2">
+
                 {/* <TechStack /> */}
                 <SwiperContainer />
             </Card>
-            <Card className="row-span-2 col-start-4">2</Card>
-            <Card className="col-start-5">
-                <Linkedin></Linkedin>
+            <Card className="row-span-2 col-span-2 col-start-4">
+
+                <div className='flex justify-center p-3 space-x-1'>
+                    <h1 className="text-xl text-center text-pretty">Follow Me</h1>
+                    <div><HiOutlineAtSymbol size={28} /></div>
+                    <div className='pl-2'>
+                    </div>
+
+                </div>
+                <div>
+                    <SocialsIcons></SocialsIcons>
+                </div>
             </Card>
-            <Card className="col-start-6"><Instagram></Instagram></Card>
-            <Card className="col-start-5 row-start-2">5</Card>
-            <Card className="col-start-6 row-start-2">6</Card>
+            <Card className="col-start-6"> <ModeToggle></ModeToggle>
+            </Card>
+            <Card className="col-start-6 row-start-2">
+                <div>
+                    <BuyMeCoffee></BuyMeCoffee>
+                </div>
+
+            </Card>
             <Card className="row-span-2 row-start-3">
                 <Image
                     src="/images/image.png"
@@ -68,8 +90,8 @@ const GridContainer: React.FC = () => {
                     className="w-full h-full object-cover rounded-lg"
                 ></Image>
             </Card>
-            <Card className="col-span-3 row-span-2 row-start-5">10</Card>
-            <Card className="col-span-3 row-span-2 col-start-4 row-start-5">11</Card>
+            <Card className="col-span-3 row-span-2 row-start-5">View works</Card>
+            <Card className="col-span-3 row-span-2 col-start-4 row-start-5">About Me // Companies worked for</Card>
         </div>
     );
 };

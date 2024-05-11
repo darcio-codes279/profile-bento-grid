@@ -4,7 +4,7 @@ import { ModeToggle } from './ui/theme-toggle';
 
 const Header = () => {
     return (
-        <div className="grid grid-cols-3 w-full" >
+        <div className="grid grid-cols-3 w-full flex justify-between" >
             <Image
                 src="/images/Logo.png"
                 alt="Description of the image"

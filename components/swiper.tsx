@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 
-import { Autoplay, EffectFade, FreeMode, Scrollbar } from 'swiper/modules'
+import { Autoplay, EffectFade, Grid, Scrollbar } from 'swiper/modules'
 
 import { CardTitle, CardDescription, Card } from './ui/card';
 
@@ -17,75 +17,76 @@ import { CardTitle, CardDescription, Card } from './ui/card';
 
 
 import { DiJsBadge, DiGithubBadge, DiNodejs, DiPython } from "react-icons/di";
-import { Linkedin } from 'lucide-react';
+import {
+    SiTypescript, SiHtml5, SiAmazonaws, SiAmazondynamodb, SiMysql,
+    SiCss3, SiMongodb, SiRedux, SiNextdotjs, SiFigma, SiPowershell, SiLinux, SiYaml
+} from "react-icons/si";
+import { FaCss3Alt } from "react-icons/fa6";
+import { RiReactjsFill } from "react-icons/ri";
+import { GoStack } from "react-icons/go";
+
 const SwiperContainer = () => {
     return (
-        <div>
+        <>
+            <div className='flex justify-center p-5'>
+                <h1 className="text-2xl text-center text-pretty">Tech Stack</h1>
+                <div className='pl-2'>
+                    <GoStack size={28} />
+                </div>
+
+            </div>
             <Swiper
-                spaceBetween={0}
-                slidesPerView={2}
+                spaceBetween={1}
+                slidesPerView={3}
+                centeredSlides={true}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
-                speed={1500}
+                speed={3000}
                 loop={true}
-                centeredSlides={true}
                 allowTouchMove={false}
-                modules={[Autoplay, FreeMode]}
-                autoplay={{ delay: 0, disableOnInteraction: true }}
+                modules={[Autoplay, EffectFade, Grid]}
+                autoplay={{ delay: 1, pauseOnMouseEnter: false }}
             >
-                <SwiperSlide>
-                    <div>
-                        <Card className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-200 rounded-lg max-w-52">
-                            <div>
-                                <DiJsBadge size={32} />
-                            </div>
-                            <div className="space-y-2">
-                                <CardTitle>JavaScript</CardTitle>
-                            </div>
-                        </Card>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div>
-                        <Card className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-200 rounded-lg max-w-52">
-                            <div>
-                                <DiJsBadge size={32} />
-                            </div>
-                            <div className="space-y-2">
-                                <CardTitle>JavaScript</CardTitle>
-                                <CardDescription></CardDescription>
-                            </div>
-                        </Card>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div>
-                        <Card className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-200 rounded-lg max-w-52">
-                            <div>
-                                <DiGithubBadge size={32} />
-                            </div>
-                            <div className="space-y-2">
-                                <CardTitle>GitHub</CardTitle>
-                                <CardDescription></CardDescription>
-                            </div>
-                        </Card>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div>
-                        <Card className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-200 rounded-lg max-w-52">
-                            <div>
-                                <DiNodejs size={32} />
-                            </div>
-                            <div className="space-y-2">
-                                <CardTitle>Node JS</CardTitle>
-                                <CardDescription></CardDescription>
-                            </div>
-                        </Card>
-                    </div>
-                </SwiperSlide>
+                {[
+                    { name: 'JavaScript', icon: DiJsBadge },
+                    { name: 'Python', icon: DiPython },
+                    { name: 'GitHub', icon: DiGithubBadge },
+                    { name: 'Node JS', icon: DiNodejs },
+                    { name: 'TypeScript', icon: SiTypescript },
+                    { name: 'HTML5', icon: SiHtml5 },
+                    { name: 'AWS', icon: SiAmazonaws },
+                    { name: 'DynamoDB', icon: SiAmazondynamodb },
+                    { name: 'CSS3', icon: SiCss3 },
+                    { name: 'MongoDB', icon: SiMongodb },
+                    { name: 'Redux', icon: SiRedux },
+                    { name: 'Next.js', icon: SiNextdotjs },
+                    { name: 'Figma', icon: SiFigma },
+                    { name: 'PowerShell', icon: SiPowershell },
+                    { name: 'Linux', icon: SiLinux },
+                    { name: 'YAML', icon: SiYaml },
+                    { name: 'React.js', icon: RiReactjsFill },
+                    { name: 'Mysql', icon: SiMysql },
+                ].map(({ name, icon: Icon, }) => (
+                    <SwiperSlide key={name}>
+                        <div>
+                            <Card className="flex items-center gap-4 p-2 bg-neutral-800 border dark:border-neutral-700 rounded-lg max-w-40">
+                                <div className='p-2 border bg-neutral-700 dark:border-neutral-700 rounded-lg'>
+                                    <Icon size={28} color='neutral' />
+                                </div>
+                                <div className="space-y-2">
+                                    <p>{name}</p>
+                                </div>
+                            </Card>
+                        </div>
+                    </SwiperSlide>
+                ))}
             </Swiper>
-        </div>
+
+
+        </>
+
+
+
     )
 }
 

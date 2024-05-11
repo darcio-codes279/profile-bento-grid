@@ -6,12 +6,12 @@ import GridContainer from "@/components/grid-container";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center p-4 w-full h-screen">
-      <div className="z-10 w-full max-w-5xl flex justify-between font-mono text-sm lg:flex h-auto">
+    <main className="flex flex-col items-start p-4 w-full h-screen">
+      {/* <div className="z-10 w-full max-w-5xl flex justify-between font-mono text-sm lg:flex h-auto">
         <Header />
-      </div>
+      </div> */}
 
-      <div className="flex gap-4 h-full w-full">
+      <div className="flex gap-4 h-full w-full px-10 py-10">
         <GridContainer />
       </div>
 
