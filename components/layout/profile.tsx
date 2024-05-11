@@ -21,13 +21,22 @@ import Image from "next/image";
 const Profile = () => {
     return (
         <>
-            <CardHeader>
+            <CardHeader className="p-4">
                 <div className="flex justify-between">
-                    <div className="flex items-center space-x-2">
-                        <Avatar>
+                    <div className="flex items-center space-x-6">
+                        <div>
+                            <Image
+                                src={"/images/third.png"}
+                                alt="Description of the image"
+                                width={100}
+                                height={100}
+                                className="rounded-full"
+                            ></Image>
+                        </div>
+                        {/* <Avatar>
                             <AvatarImage alt="User Avatar" src="/images/third.png" sizes="32" />
                             <AvatarFallback>DM</AvatarFallback>
-                        </Avatar>
+                        </Avatar> */}
                         <div>
                             <CardTitle>Darcio Massala</CardTitle>
                             <CardDescription>Software Engineer</CardDescription>
@@ -44,7 +53,7 @@ const Profile = () => {
                     </div>
                 </div>
             </CardHeader>
-            <CardContent className="text-sm pt-0 pb-5">
+            <CardContent className="text-sm pb-2">
                 <p>This card includes an avatar, making it suitable for user-related information.</p>
             </CardContent>
             <CardFooter className="place-content-center space-x-4">
