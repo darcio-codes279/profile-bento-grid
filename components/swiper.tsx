@@ -1,5 +1,6 @@
 'use client'
 
+import { metadata } from '@/app/metadata';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -24,21 +25,23 @@ import {
 import { FaCss3Alt } from "react-icons/fa6";
 import { RiReactjsFill } from "react-icons/ri";
 import { GoStack } from "react-icons/go";
+import { Button } from './ui/button';
 
 const SwiperContainer = () => {
+    const IconComponent = metadata.section[0].icon;
     return (
         <>
             <div className='flex justify-center p-5'>
-                <h1 className="text-2xl text-center text-pretty">Tech Stack</h1>
+                <h1 className="text-2xl text-center text-pretty">{metadata.section[0].title}</h1>
                 <div className='pl-2'>
-                    <GoStack size={28} />
+                    {IconComponent && <IconComponent size={28} />}
                 </div>
 
             </div>
             <Swiper
                 spaceBetween={1}
                 slidesPerView={3}
-                centeredSlides={true}
+                centeredSlides={false}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
                 speed={3000}
@@ -81,7 +84,9 @@ const SwiperContainer = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-
+            <div className='flex justify-center pt-5'>
+                <Button>{metadata.section[0].button}</Button>
+            </div>
 
         </>
 

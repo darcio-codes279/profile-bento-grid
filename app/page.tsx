@@ -3,6 +3,7 @@ import { ModeToggle } from "@/components/ui/theme-toggle";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import GridContainer from "@/components/grid-container";
+import Loading from "./loading";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
 
       <div className="flex gap-4 h-full w-full px-10 py-10">
         <GridContainer />
+
       </div>
 
     </main >

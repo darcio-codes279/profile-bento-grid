@@ -13,17 +13,15 @@ import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import Profile from "./layout/profile";
-import TechStack from "./layout/tech-stack";
 import SwiperContainer from "./swiper";
 import { ModeToggle } from "./ui/theme-toggle";
 
-import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import { BsSubstack } from "react-icons/bs";
 import { HiOutlineAtSymbol } from "react-icons/hi";
-import { SiBuymeacoffee } from "react-icons/si";
 import SocialsIcons from "./layout/socialsIcons";
 import BuyMeCoffee from "./layout/buyMeCoffee";
+import { IoBriefcaseOutline } from "react-icons/io5";
 
+import AboutMe from "./layout/aboutMe";
 // const GridItems: GridItem[] = [
 //     { title: "Tech Stack", colSpan: 2, rowSpan: 2, colStart: 1, rowStart: 1 },
 //     { title: "CV Download + Email", colSpan: 2, rowSpan: 2, colStart: 4, rowStart: 1 },
@@ -49,19 +47,20 @@ const GridContainer: React.FC = () => {
                 <SwiperContainer />
             </Card>
             <Card className="row-span-2 col-span-2 col-start-4">
-
-                <div className='flex justify-center p-3 space-x-1'>
-                    <h1 className="text-xl text-center text-pretty">Follow Me</h1>
-                    <div><HiOutlineAtSymbol size={28} /></div>
-                    <div className='pl-2'>
-                    </div>
-
-                </div>
                 <div>
                     <SocialsIcons></SocialsIcons>
                 </div>
             </Card>
-            <Card className="col-start-6"> <ModeToggle></ModeToggle>
+            <Card className="col-start-6">
+                <div className="flex justify-center w-full ">
+                    <Image
+                        src="/images/Logo.png"
+                        alt="Description of the image"
+                        width={150}
+                        height={150}
+
+                    />
+                </div>
             </Card>
             <Card className="col-start-6 row-start-2">
                 <div>
@@ -71,10 +70,10 @@ const GridContainer: React.FC = () => {
             </Card>
             <Card className="row-span-2 row-start-3">
                 <Image
-                    src="/images/image.png"
+                    src="/images/img1.jpeg"
                     alt="Description of the image"
-                    width={100}
-                    height={100}
+                    width={10000}
+                    height={10000}
                     className="w-full h-full object-cover rounded-lg"
                 ></Image>
             </Card>
@@ -84,21 +83,42 @@ const GridContainer: React.FC = () => {
             <Card className="col-span-2 row-span-2 col-start-5 row-start-3">
                 <Image
                     src="/images/oliver-pecker-HONJP8DyiSM-unsplash.png"
-                    alt="Description of the image"
-                    width={100}
-                    height={100}
+                    alt="Picture of laptop"
+                    width={10000}
+                    height={10000}
                     className="w-full h-full object-cover rounded-lg"
                 ></Image>
             </Card>
-            <Card className="col-span-3 row-span-2 row-start-5">View works</Card>
-            <Card className="col-span-3 row-span-2 col-start-4 row-start-5">About Me // Companies worked for</Card>
+            <Card className="col-span-3 row-span-2 row-start-5">
+                <div className="flex flex-col">
+                    <div className='flex justify-center p-5'>
+                        <h1 className="text-xl text-center text-pretty">View Works</h1>
+                        <div className='pl-2'>
+                            <IoBriefcaseOutline size={28} />
+                        </div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <div className="aspect-video max-h-[210px] max-w-[210px]">
+                            <Image
+                                src={'/images/view-works/torrinJoshua.png'}
+                                alt="Past work"
+                                width={10000}
+                                height={10000}
+                                className="w-full h-full object-cover rounded-lg"
+                            ></Image>
+                        </div>
+                        <div className="relative">
+                            <div className="">
+                                <Button>View Work</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Card>
+            <Card className="col-span-3 row-span-2 col-start-4 row-start-5">
+                <AboutMe></AboutMe>
+            </Card>
         </div>
     );
 };
 export default GridContainer;
-
-// {JavaScript} Typescript, HTML, CSS, Node JS, AWS
-// Python, Pandas, GitHub, Dynamo DB, Mongo DB, Redux, Next JS, React JS, Express JS
-// Powershell, Linux, Yaml, 
-// Figma
-// Jira, Bitbucket, 

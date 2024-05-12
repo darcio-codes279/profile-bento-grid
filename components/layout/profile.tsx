@@ -24,13 +24,13 @@ const Profile = () => {
             <CardHeader className="p-4">
                 <div className="flex justify-between">
                     <div className="flex items-center space-x-6">
-                        <div>
+                        <div className="max-h-[100px] max-w-[100px]">
                             <Image
                                 src={"/images/third.png"}
                                 alt="Description of the image"
                                 width={100}
                                 height={100}
-                                className="rounded-full"
+                                className="rounded-full b dark:border-neutral-700"
                             ></Image>
                         </div>
                         {/* <Avatar>
@@ -41,15 +41,6 @@ const Profile = () => {
                             <CardTitle>Darcio Massala</CardTitle>
                             <CardDescription>Software Engineer</CardDescription>
                         </div>
-                    </div>
-                    <div className="">
-                        <Image
-                            src="/images/Logo.png"
-                            alt="Description of the image"
-                            width={100}
-                            height={100}
-
-                        />
                     </div>
                 </div>
             </CardHeader>
