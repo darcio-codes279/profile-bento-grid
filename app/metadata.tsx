@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         },
         { title: "Random", src: "" },
         { title: "Buy Me a Coffee", icon: "coffee" },
-        { title: "pic", src: "" },
+        { title: "pic", src: "/images/img1.jpeg" },
         { title: "Profile", src: "", description: "", icon1: "", icon2: "" },
         { title: "pic2", src: "" },
         { title: "View Works", icon: "", buttonTitle: "" },
