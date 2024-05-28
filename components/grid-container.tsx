@@ -1,124 +1,115 @@
-import React from "react";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "./ui/card";
-import { Linkedin, Instagram, } from "lucide-react";
-import { Mail, StickyNote, Download } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
-import { Button } from "./ui/button";
-import Image from "next/image";
-import Profile from "./layout/profile";
-import SwiperContainer from "./swiper";
-import { ModeToggle } from "./ui/theme-toggle";
+"use client"
 
-import { HiOutlineAtSymbol } from "react-icons/hi";
+import { cn } from "../lib/utils";
+import React from "react";
+import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
+import {
+    IconClipboardCopy,
+    IconFileBroken,
+    IconSignature,
+    IconTableColumn,
+} from "@tabler/icons-react";
+import { metadata } from '@/app/metadata';
+import SwiperContainer from "./swiper";
+import { InfiniteMovingCardsDemo } from "./layout/tech-stack";
+import { BackgroundGradientAnimationDemo } from "./layout/backgroundGradientDemo";
+import Profile from "./layout/profile";
+import Image from "next/image";
 import SocialsIcons from "./layout/socialsIcons";
 import BuyMeCoffee from "./layout/buyMeCoffee";
-import { IoBriefcaseOutline } from "react-icons/io5";
+import EmailMe from "./layout/emailMe";
 
-import AboutMe from "./layout/aboutMe";
-// const GridItems: GridItem[] = [
-//     { title: "Tech Stack", colSpan: 2, rowSpan: 2, colStart: 1, rowStart: 1 },
-//     { title: "CV Download + Email", colSpan: 2, rowSpan: 2, colStart: 4, rowStart: 1 },
-//     { title: "LinkedIn", colSpan: 1, rowSpan: 1, colStart: 6, rowStart: 1 },
-//     { title: "Github", colSpan: 1, rowSpan: 1, colStart: 7, rowStart: 1 },
-//     { title: "Instagram", colSpan: 1, rowSpan: 1, colStart: 6, rowStart: 2 },
-//     { title: "Twitter" },
-//     { title: "Random"},
-//     { title: "Darcio Massala"},
-//     { title: "Random-2",},
-//     { title: "View Works },
-//     { title: "About Me"},
-//     { title: "Buy me a coffee"},
-//     { title: "Emoji"},
-// ];
-
-const GridContainer: React.FC = () => {
+export function BentoGridSecondDemo() {
     return (
-        <div className="grid grid-cols-6 grid-rows-6 gap-4 w-full">
-            <Card className="col-span-3 row-span-2">
-
-                {/* <TechStack /> */}
-                <SwiperContainer />
-            </Card>
-            <Card className="row-span-2 col-span-2 col-start-4">
-                <div>
-                    <SocialsIcons></SocialsIcons>
-                </div>
-            </Card>
-            <Card className="col-start-6">
-                <div className="flex justify-center w-full ">
-                    <Image
-                        src="/images/Logo.png"
-                        alt="Description of the image"
-                        width={150}
-                        height={150}
-
-                    />
-                </div>
-            </Card>
-            <Card className="col-start-6 row-start-2">
-                <div>
-                    <BuyMeCoffee></BuyMeCoffee>
-                </div>
-
-            </Card>
-            <Card className="row-span-2 row-start-3">
-                <Image
-                    src="/images/img1.jpeg"
-                    alt="Description of the image"
-                    width={10000}
-                    height={10000}
-                    className="w-full h-full object-cover rounded-lg"
-                ></Image>
-            </Card>
-            <Card className="col-span-3 row-span-2 row-start-3">
-                <Profile></Profile>
-            </Card>
-            <Card className="col-span-2 row-span-2 col-start-5 row-start-3">
-                <Image
-                    src="/images/oliver-pecker-HONJP8DyiSM-unsplash.png"
-                    alt="Picture of laptop"
-                    width={10000}
-                    height={10000}
-                    className="w-full h-full object-cover rounded-lg"
-                ></Image>
-            </Card>
-            <Card className="col-span-3 row-span-2 row-start-5">
-                <div className="flex flex-col">
-                    <div className='flex justify-center p-5'>
-                        <h1 className="text-xl text-center text-pretty">View Works</h1>
-                        <div className='pl-2'>
-                            <IoBriefcaseOutline size={28} />
-                        </div>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <div className="aspect-video max-h-[210px] max-w-[210px]">
-                            <Image
-                                src={'/images/view-works/torrinJoshua.png'}
-                                alt="Past work"
-                                width={10000}
-                                height={10000}
-                                className="w-full h-full object-cover rounded-lg"
-                            ></Image>
-                        </div>
-                        <div className="relative">
-                            <div className="">
-                                <Button>View Work</Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Card>
-            <Card className="col-span-3 row-span-2 col-start-4 row-start-5">
-                <AboutMe></AboutMe>
-            </Card>
-        </div>
+        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]  grid md:grid-cols-6 md:grid-rows-6">
+            {items.map((item, i) => (
+                <BentoGridItem
+                    key={i}
+                    title={item.title}
+                    description={item.description}
+                    header={item.header}
+                    className={item.className}
+                    icon={item.icon}
+                    image={item.image}
+                />
+            ))}
+        </BentoGrid>
     );
-};
-export default GridContainer;
+}
+
+const IconComponent = metadata.section[0].icon;
+const Skeleton = () => (
+    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] bg-neutral-100 dark:bg-black"></div>
+
+);
+const items = [
+    {
+        title: "Tech Stack",
+        description: "",
+        header: <InfiniteMovingCardsDemo />,
+        className: "md:col-span-3 md:row-span-2",
+        icon: <IconComponent size={28} />,
+    },
+    {
+        title: "",
+        description: "",
+        header: "",
+        className: "md:row-span-2 md:col-span-2 p-0",
+        icon: "",
+        image: <SocialsIcons />
+    },
+    {
+        title: "",
+        description: "",
+        header: <BuyMeCoffee />,
+        className: "md:col-span-1",
+        icon: "",
+    },
+    {
+        title: "",
+        description: "",
+        header: <EmailMe />,
+        className: "md:col-start-6 md:row-start-2",
+        icon: "",
+
+    },
+    {
+        title: "",
+        description:
+            "",
+        header: "",
+        className: "md:row-span-2 md:row-start-3 p-0",
+        icon: "",
+        image: <Image src="/images/img1.jpeg" alt="Image2" width={150} height={150} className="md:max-h-[93%] rounded-xl block max-w-full" />
+    },
+    {
+        title: "",
+        description: "",
+        header: <Profile />,
+        className: "md:col-span-3 md:row-span-2 md:row-start-3",
+        icon: "",
+    },
+    {
+        title: "",
+        description: "",
+        header: "",
+        className: "md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3",
+        icon: "",
+        // image: <BackgroundGradientAnimationDemo />,
+    },
+    {
+        title: "The Art of Design",
+        description: "Discover the beauty of thoughtful and functional design.",
+        header: <Skeleton />,
+        className: "md:col-span-3 md:row-span-2 md:row-start-5",
+        icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    },
+    {
+        title: "The Power of Communication",
+        description:
+            "Understand the impact of effective communication in our lives.",
+        header: <Skeleton />,
+        className: "md:col-span-3 md:row-span-2 md:col-start-4 md:row-start-5",
+        icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    },
+];

@@ -28,16 +28,8 @@ import { GoStack } from "react-icons/go";
 import { Button } from './ui/button';
 
 const SwiperContainer = () => {
-    const IconComponent = metadata.section[0].icon;
     return (
         <>
-            <div className='flex justify-center p-5'>
-                <h1 className="text-2xl text-center text-pretty">{metadata.section[0].title}</h1>
-                <div className='pl-2'>
-                    {IconComponent && <IconComponent size={28} />}
-                </div>
-
-            </div>
             <Swiper
                 spaceBetween={1}
                 slidesPerView={3}
@@ -84,9 +76,6 @@ const SwiperContainer = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className='flex justify-center pt-5'>
-                <Button>{metadata.section[0].button}</Button>
-            </div>
 
         </>
 

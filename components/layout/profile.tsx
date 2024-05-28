@@ -16,17 +16,18 @@ import {
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import Image from "next/image";
+import { metadata } from "@/app/metadata";
 
 
 const Profile = () => {
     return (
         <>
-            <CardHeader className="p-4">
+            <CardHeader className="p-2 group-hover/bento:translate-x-2 transition duration-200">
                 <div className="flex justify-between">
                     <div className="flex items-center space-x-6">
-                        <div className="max-h-[100px] max-w-[100px]">
+                        <div className="max-h-[60px] max-w-[60px]">
                             <Image
-                                src={"/images/third.png"}
+                                src={metadata.section[5].src}
                                 alt="Description of the image"
                                 width={100}
                                 height={100}
@@ -44,8 +45,8 @@ const Profile = () => {
                     </div>
                 </div>
             </CardHeader>
-            <CardContent className="text-sm pb-2">
-                <p>This card includes an avatar, making it suitable for user-related information.</p>
+            <CardContent className="text-sm max-pb-2">
+                <p>{metadata.section[5].description}</p>
             </CardContent>
             <CardFooter className="place-content-center space-x-4">
 
