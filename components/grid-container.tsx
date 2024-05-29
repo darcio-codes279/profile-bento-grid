@@ -10,7 +10,7 @@ import {
     IconTableColumn,
 } from "@tabler/icons-react";
 import { metadata } from '@/app/metadata';
-import SwiperContainer from "./swiper";
+import PastWorks from "@/components/layout/pastWorks";
 import { InfiniteMovingCardsDemo } from "./layout/tech-stack";
 import { BackgroundGradientAnimationDemo } from "./layout/backgroundGradientDemo";
 import Profile from "./layout/profile";
@@ -18,9 +18,12 @@ import Image from "next/image";
 import SocialsIcons from "./layout/socialsIcons";
 import BuyMeCoffee from "./layout/buyMeCoffee";
 import EmailMe from "./layout/emailMe";
+import OrbitingCircles from "./ui/orbiting-circles";
+import { WorkExperience } from "./layout/workExperience";
 
 export function BentoGridSecondDemo() {
     return (
+
         <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]  grid md:grid-cols-6 md:grid-rows-6">
             {items.map((item, i) => (
                 <BentoGridItem
@@ -34,6 +37,7 @@ export function BentoGridSecondDemo() {
                 />
             ))}
         </BentoGrid>
+
     );
 }
 
@@ -47,14 +51,14 @@ const items = [
         title: "Tech Stack",
         description: "",
         header: <InfiniteMovingCardsDemo />,
-        className: "md:col-span-3 md:row-span-2",
+        className: "md:col-span-3 md:row-span-2 order-2",
         icon: <IconComponent size={28} />,
     },
     {
         title: "",
         description: "",
         header: "",
-        className: "md:row-span-2 md:col-span-2 p-0",
+        className: "md:row-span-2 md:col-span-2 p-0 order-3",
         icon: "",
         image: <SocialsIcons />
     },
@@ -62,14 +66,14 @@ const items = [
         title: "",
         description: "",
         header: <BuyMeCoffee />,
-        className: "md:col-span-1",
+        className: "md:col-span-1 order-6",
         icon: "",
     },
     {
         title: "",
         description: "",
         header: <EmailMe />,
-        className: "md:col-start-6 md:row-start-2",
+        className: "md:col-start-6 md:row-start-2 order-6",
         icon: "",
 
     },
@@ -78,38 +82,38 @@ const items = [
         description:
             "",
         header: "",
-        className: "md:row-span-2 md:row-start-3 p-0",
+        className: "md:row-span-2 md:row-start-3 md:p-0 hidden md:block",
         icon: "",
-        image: <Image src="/images/img1.jpeg" alt="Image2" width={150} height={150} className="md:max-h-[93%] rounded-xl block max-w-full" />
+        image: <Image src="/images/img1.jpeg" alt="Image2" width={150} height={150} className="max-h-[93%] rounded-xl max-w-full" />
     },
     {
         title: "",
         description: "",
         header: <Profile />,
-        className: "md:col-span-3 md:row-span-2 md:row-start-3",
+        className: "md:col-span-3 md:row-span-2 md:row-start-3 order-1",
         icon: "",
     },
     {
-        title: "",
-        description: "",
+        title: "About Me",
+        description: "Do something with this page",
         header: "",
-        className: "md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3",
+        className: "md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3 md:block hidden",
         icon: "",
         // image: <BackgroundGradientAnimationDemo />,
     },
     {
-        title: "The Art of Design",
-        description: "Discover the beauty of thoughtful and functional design.",
-        header: <Skeleton />,
-        className: "md:col-span-3 md:row-span-2 md:row-start-5",
-        icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+        title: "Latest Works",
+        description: "",
+        header: <PastWorks />,
+        className: "md:col-span-3 md:row-span-2 md:row-start-5 order-4",
+        icon: "",
     },
     {
-        title: "The Power of Communication",
+        title: "",
         description:
-            "Understand the impact of effective communication in our lives.",
-        header: <Skeleton />,
-        className: "md:col-span-3 md:row-span-2 md:col-start-4 md:row-start-5",
-        icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+            "",
+        header: <WorkExperience />,
+        className: "md:col-span-3 md:row-span-2 md:col-start-4 md:row-start-5 order-7 p-0",
+        icon: "",
     },
 ];

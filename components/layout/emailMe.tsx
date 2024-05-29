@@ -7,23 +7,17 @@ import { metadata } from '@/app/metadata';
 
 const EmailMe = () => {
     return (
-        <>
-            <CardContent className="text-sm max-pb-2">
-                <p>{metadata.section[5].description}</p>
-            </CardContent>
-            <CardFooter className="place-content-center space-x-4">
+        <div className="flex flex-col justify-center p-3 space-x-1 items-center">
+            <HoverCard>
+                <HoverCardTrigger>
+                    <Button><Mail /></Button>
 
-                <HoverCard>
-                    <HoverCardTrigger>
-                        <Button><Mail /></Button>
-
-                    </HoverCardTrigger>
-                    <HoverCardContent>
-                        <p className="text-center">Send me an e-mail</p>
-                    </HoverCardContent>
-                </HoverCard>
-            </CardFooter>
-        </>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                    <p className="text-center">Send me an e-mail</p>
+                </HoverCardContent>
+            </HoverCard>
+        </div>
     )
 }
 

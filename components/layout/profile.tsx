@@ -45,21 +45,10 @@ const Profile = () => {
                     </div>
                 </div>
             </CardHeader>
-            <CardContent className="text-sm max-pb-2">
+            <CardContent className="text-sm max-pb-2 pt-4">
                 <p>{metadata.section[5].description}</p>
             </CardContent>
             <CardFooter className="place-content-center space-x-4">
-
-                <HoverCard>
-                    <HoverCardTrigger>
-                        <Button><Mail /></Button>
-
-                    </HoverCardTrigger>
-                    <HoverCardContent>
-                        <p className="text-center">Send me an e-mail</p>
-                    </HoverCardContent>
-                </HoverCard>
-
 
                 <HoverCard>
                     <HoverCardTrigger>
