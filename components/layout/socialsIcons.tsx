@@ -27,10 +27,11 @@ const SocialsIcons = () => {
     const IconComponent3 = metadata.section[1].social2
     const IconComponent4 = metadata.section[1].social3
 
+
     return (
         <>
             <div className="flex justify-center p-3 space-x-1 group-hover/bento:translate-x-2 transition duration-200" >
-                <h1 className="text-xl text-center text-pretty">{metadata.section[1].title}</h1>
+                <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-200/80 bg-clip-text text-center text-2xl font-semibold leading-none text-transparent from-white to-slate-900/10 p-0">{metadata.section[1].title}</span>
                 <div><IconComponent1 size={28} />
                 </div>
             </div>

@@ -3,30 +3,44 @@ import React from 'react'
 import OrbitingCircles from "@/components/ui/orbiting-circles";
 import { IconProps } from "@radix-ui/react-icons/dist/types";
 import { SiAccenture } from 'react-icons/si';
+import Image from 'next/image';
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
 export function WorkExperience() {
     return (
         <div className="relative flex h-full w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-3xl font-semibold leading-none text-transparent from-white to-slate-900/10">
-                +3 Years Experience
-            </span>
+
+            <HoverCard>
+                <HoverCardTrigger>
+                    <span className=" whitespace-pre-wrap bg-gradient-to-b from-black to-gray-200/80 bg-clip-text text-center text-2xl font-semibold leading-none text-transparent from-white to-slate-900/10">
+                        +3 Years Experience
+                    </span>
+                </HoverCardTrigger>
+                <HoverCardContent>
+                    <p className="text-center">Accenture, DWP, Home Office and Middleground Creative Studios</p>
+                </HoverCardContent>
+            </HoverCard>
 
             {/* Inner Circles */}
             <OrbitingCircles
-                className="h-[30px] w-[30px] border-none bg-transparent"
+                className="h-[50px] w-[50px] border-none bg-transparent"
                 duration={20}
                 delay={20}
-                radius={40}
+                radius={35}
             >
-                <SiAccenture />
+                <Image src="/images/icons/dwp.svg" alt="Microsoft Logo" width={100} height={100} />
             </OrbitingCircles>
             <OrbitingCircles
-                className="h-[30px] w-[30px] border-none bg-transparent"
+                className="h-[50px] w-[50px] border-none bg-white"
                 duration={20}
                 delay={10}
-                radius={40}
+                radius={35}
             >
-                <Icons.notion />
+                <Image src="/images/icons/middle-ground.png" alt="Bank of England Logo" width={30} height={30} />
             </OrbitingCircles>
 
             {/* Outer Circles (reverse) */}
@@ -43,7 +57,7 @@ export function WorkExperience() {
                 duration={20}
                 delay={20}
             >
-                <Icons.gitHub />
+                <Image src="/images/icons/gov-uk.svg" alt="Gov.UK logo" width={100} height={100} />
             </OrbitingCircles>
         </div>
     );
@@ -58,7 +72,7 @@ const Icons = {
             ></path>
         </svg>
     ),
-    notion: (props: IconProps) => (
+    dwp: (props: IconProps) => (
         <svg
             width="100"
             height="100"

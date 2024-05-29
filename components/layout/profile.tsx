@@ -39,8 +39,8 @@ const Profile = () => {
                             <AvatarFallback>DM</AvatarFallback>
                         </Avatar> */}
                         <div>
-                            <CardTitle>Darcio Massala</CardTitle>
-                            <CardDescription>Software Engineer</CardDescription>
+                            <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-200/80 bg-clip-text text-center text-2xl font-semibold leading-none text-transparent from-white to-slate-900/10 p-0">Darcio Massala</span>
+                            <CardDescription className="pointer-events-none bg-gradient-to-b from-black to-gray-200/80 bg-clip-text text-left text-1xl font-semibold leading-none text-transparent from-white to-slate-900/10">Software Engineer</CardDescription>
                         </div>
                     </div>
                 </div>
