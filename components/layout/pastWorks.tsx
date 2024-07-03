@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const PastWorks = () => {
     return (
-        <div className="flex items-center p-2 bg-neutral-800 border border-neutral-700 rounded-lg max-w-40 ">
+        <div className="flex items-center">
             <Image
                 src="/images/view-works/torrinJoshua.png"
                 alt="Past Clients"

@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/hover-card"
 import Image from "next/image";
 import { metadata } from "@/app/metadata";
+import SwiperContainer from "../swiper";
 
 
 const Profile = () => {
@@ -45,8 +46,8 @@ const Profile = () => {
                     </div>
                 </div>
             </CardHeader>
-            <CardContent className="text-sm max-pb-2 pt-4">
-                <p>{metadata.section[5].description}</p>
+            <CardContent className="text-sm max-pb-2 pt-2">
+                <SwiperContainer />
             </CardContent>
             <CardFooter className="place-content-center space-x-4">
 

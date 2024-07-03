@@ -26,8 +26,8 @@ export const metadata: Metadata = {
         { title: "pic", src: "/images/img1.jpeg" },
         {
             title: "Profile", src: "/images/third.png", quote: "I specialise in using Full-Stack Development to create digital solutions to our everyday problems.",
-            quote2: "I believe that Technology harnesses the power to propel the world into the future.",
-            quote3: "Therefore, I set out to create and teach others to create Technology for good.",
+            quote1: "I believe that Technology harnesses the power to propel the world into the future.",
+            quote2: "Therefore, I set out to create and teach others to create Technology for good.",
             icon1: "<Mail />", icon2: "<Download />"
         },
         { title: "pic2", src: "" },
