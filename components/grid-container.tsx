@@ -20,6 +20,7 @@ import BuyMeCoffee from "./layout/buyMeCoffee";
 import EmailMe from "./layout/emailMe";
 import OrbitingCircles from "./ui/orbiting-circles";
 import { WorkExperience } from "./layout/workExperience";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
 
 export function BentoGridSecondDemo() {
     return (
@@ -95,7 +96,7 @@ const items = [
     },
     {
         title: "About Me",
-        description: "Do something with this page",
+        description: "",
         header: "",
         className: "md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3 md:block hidden",
         icon: "",
@@ -106,7 +107,7 @@ const items = [
         description: "",
         header: <PastWorks />,
         className: "md:col-span-3 md:row-span-2 md:row-start-5 order-4",
-        icon: "",
+        icon: <MdOutlineWorkspacePremium size={28} />,
     },
     {
         title: "",

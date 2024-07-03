@@ -9,12 +9,12 @@ import Image from 'next/image';
 
 const PastWorks = () => {
     return (
-        <div className="flex items-center">
+        <div className="flex items-center justify-center p-0">
             <Image
                 src="/images/view-works/torrinJoshua.png"
                 alt="Past Clients"
-                width={200}
-                height={200}
+                width={280}
+                height={280}
                 className="rounded-lg"
             ></Image>
         </div>
