@@ -15,7 +15,7 @@ const EmailMe = () => {
         <div className="flex flex-col justify-center p-3 space-x-1 items-center">
             <HoverCard>
                 <HoverCardTrigger>
-                    <Button><Mail /></Button>
+                    <Button onClick={copyEmail}><Mail /></Button>
 
                 </HoverCardTrigger>
                 <HoverCardContent>
