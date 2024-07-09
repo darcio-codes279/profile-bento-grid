@@ -6,6 +6,11 @@ import { Mail } from 'lucide-react'
 import { metadata } from '@/app/metadata';
 
 const EmailMe = () => {
+
+    const copyEmail = () => {
+        navigator.clipboard.writeText(metadata.section[1].email)
+        alert("Email copied!")
+    }
     return (
         <div className="flex flex-col justify-center p-3 space-x-1 items-center">
             <HoverCard>
